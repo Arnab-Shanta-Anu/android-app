@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Job Bank</string>
+    <string name="description">All right Reserverd By BDJobs.com</string>
+    <string name="HomeBtn">Home</string>
+    <string name="CatagoryBtn">Catagories</string>
+    <string name="MyJobsBtn">My JObs</string>
+    <string name="SignInBtn">Sign In</string>
+    <string name="SearchBtn">Search</string>
+    <string name="title_activity_login_form">Sign in</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+</resources>
