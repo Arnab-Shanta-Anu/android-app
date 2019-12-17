@@ -68,6 +68,13 @@ public class MainActivity extends AppCompatActivity {
             return false;
         }
 
+        if(!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches())
+        {
+            edtEmail.setError("Enter a valid email address");
+            edtEmail.requestFocus();
+            return false;
+        }
+
         return true;
     }
 }
