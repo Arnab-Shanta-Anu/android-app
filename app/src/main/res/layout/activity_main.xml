@@ -1,154 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="10dp"
-    tools:context=".MainActivity">
+    android:layout_gravity="center"
+    android:background="#673AB7"
+    android:orientation="vertical">
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:src="@drawable/job_bank" />
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="Log In or Sign Up"
+        android:textSize="30sp" />
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp">
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textEmailAddress" />
 
-            <Button
-                android:id="@+id/HomeId"
-                android:layout_width="98dp"
-                android:layout_height="wrap_content"
-                android:background="#2196F3"
-                android:text="@string/HomeBtn" />
-
-            <Button
-                android:id="@+id/CatagoryId"
-                android:layout_width="106dp"
-                android:layout_height="wrap_content"
-                android:background="#2196F3"
-                android:text="@string/CatagoryBtn" />
-
-            <Button
-                android:id="@+id/ProfileId"
-                android:layout_width="101dp"
-                android:layout_height="wrap_content"
-                android:background="#2196F3"
-                android:text="@string/MyJobsBtn" />
-
-            <Button
-                android:id="@+id/SignInId"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:background="#2196F3"
-                android:text="@string/SignInBtn" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp">
-
-            <EditText
-                android:id="@+id/edit_searchId"
-                android:layout_width="282dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:hint="Search jobs" />
-
-            <Button
-                android:id="@+id/searchId"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:background="#36BB43"
-                android:text="@string/SearchBtn"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/job1Id"
-            android:layout_width="match_parent"
-            android:layout_height="36dp"
-            android:layout_marginBottom="10dp"
-            android:background="#D4DF62"
-            android:gravity="center_horizontal"
-            android:text="Job 1"
-            android:textStyle="normal" />
-
-        <TextView
-            android:id="@+id/job2Id"
-            android:layout_width="match_parent"
-            android:layout_height="36dp"
-            android:layout_marginBottom="10dp"
-            android:background="#D4DF62"
-            android:gravity="center_horizontal"
-            android:text="Job 2"
-            android:textStyle="normal" />
-
-        <TextView
-            android:id="@+id/job3Id"
-            android:layout_width="match_parent"
-            android:layout_height="36dp"
-            android:layout_marginBottom="10dp"
-            android:background="#D4DF62"
-            android:gravity="center_horizontal"
-            android:text="Job 3"
-            android:textStyle="normal" />
-
-        <TextView
-            android:id="@+id/job4Id"
-            android:layout_width="match_parent"
-            android:layout_height="36dp"
-            android:layout_marginBottom="10dp"
-            android:background="#D4DF62"
-            android:gravity="center_horizontal"
-            android:text="Job 4"
-            android:textStyle="normal" />
-
-        <TextView
-            android:id="@+id/job5Id"
-            android:layout_width="match_parent"
-            android:layout_height="36dp"
-            android:layout_marginBottom="10dp"
-            android:background="#D4DF62"
-            android:gravity="center_horizontal"
-            android:text="Job 5"
-            android:textStyle="normal" />
-
-        <TextView
-            android:id="@+id/job6Id"
-            android:layout_width="match_parent"
-            android:layout_height="36dp"
-            android:layout_marginBottom="10dp"
-            android:background="#D4DF62"
-            android:gravity="center_horizontal"
-            android:text="Job 6"
-            android:textStyle="normal" />
-
-        <TextView
-            android:id="@+id/job7Id"
-            android:layout_width="match_parent"
-            android:layout_height="36dp"
-            android:layout_marginBottom="80dp"
-            android:background="#D4DF62"
-            android:gravity="center_horizontal"
-            android:text="Job 7"
-            android:textStyle="normal"
-
-            />
-
-        <TextView
-            android:layout_width="401dp"
-            android:layout_height="83dp"
-            android:gravity="center"
-            android:text="@string/description"
-            android:textSize="15dp"
-            android:textStyle="italic" />
-
-
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPassword" />
 </LinearLayout>
