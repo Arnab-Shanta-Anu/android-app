@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1044928035866",
+    "firebase_url": "https://job-bank-35418.firebaseio.com",
+    "project_id": "job-bank-35418",
+    "storage_bucket": "job-bank-35418.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1044928035866:android:2262b8e4fd87c0c5ad65a3",
+        "android_client_info": {
+          "package_name": "com.example.jobbank"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1044928035866-eemjv5n7nt3j72dpre5pfm9ovatsqv4a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.jobbank",
+            "certificate_hash": "2428f7aff923ae63b1a7eb0261bf354449e33a63"
+          }
+        },
+        {
+          "client_id": "1044928035866-977takeu5ck19s5r2fj5trnhmrkaea56.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBpLRO0YU70-B4LktLk5wfZZbL3R-pwIiY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1044928035866-977takeu5ck19s5r2fj5trnhmrkaea56.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:padding="15dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginForm">
+
+    <EditText
+        android:id="@+id/nameId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter your name"
+        android:inputType="text"
+        android:layout_marginBottom="10dp"
+        />
+
+    <EditText
+        android:id="@+id/emailId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:hint="Email"
+        android:layout_marginBottom="10dp"
+        />
+
+    <EditText
+        android:id="@+id/birthdateId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Date of birth"
+        android:inputType="date"
+        android:layout_marginBottom="10dp"
+        />
+    <EditText
+        android:id="@+id/phoneNo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Phone no"
+        android:inputType="phone"
+        />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gender: "/>
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/maleId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Male"
+                />
+            <RadioButton
+                android:id="@+id/femaleId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Female"
+                />
+
+        </RadioGroup>
+    </LinearLayout>
+
+    <Button
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/fsignupId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign Up"
+        android:background="#1487E2"
+        />
+</LinearLayout>
