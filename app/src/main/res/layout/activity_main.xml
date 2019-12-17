@@ -15,14 +15,17 @@
         android:gravity="center"
         android:inputType="textEmailAddress"
         android:text="Log In or Sign Up"
-        android:textSize="30sp" />
+        android:textColor="#FF9800"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:typeface="serif" />
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="206dp" />
+        android:layout_height="88dp" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/edtEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -30,12 +33,33 @@
         android:inputType="textEmailAddress"
         android:textSize="24sp" />
 
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp" />
+
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/edtPass"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="enter password"
         android:inputType="textPassword"
         android:textSize="24sp" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="94dp" />
+
+    <Button
+        android:id="@+id/btnLogIn"
+        android:layout_width="168dp"
+        android:layout_height="wrap_content"
+        android:text="Login" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="already have an account? " />
+
 </LinearLayout>
