@@ -42,20 +42,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 email = edtEmail.getText().toString();
                 password = edtPass.getText().toString();
-                if(checkValid(email, password)){
-                    mAuth.createUserWithEmailAndPassword(email, password)
-                            .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (task.isSuccessful()) {
-                                startActivity(intent);
-                            } else {
-                                Toast.makeText(getApplicationContext(), "auth failed",Toast.LENGTH_SHORT).show();
-                            }
+                checkValid(email, password);
 
-                        }
-                    });
-                }
+
             }
         });
 
@@ -68,30 +57,44 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private boolean checkValid(String email, String password) {
+    private void checkValid(String email, String password) {
         if(email.isEmpty()){
             edtEmail.setError("Enter an email address");
             edtEmail.requestFocus();
-            return false;
+            return ;
         }
         if(password.isEmpty()){
             edtPass.setError("Enter an password address");
             edtPass.requestFocus();
-            return false;
+            return ;
         }
         if(password.length()<6){
             edtPass.setError("password needs to be at least 6 characters");
             edtPass.requestFocus();
-            return false;
+            return ;
         }
 
         if(!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches())
         {
             edtEmail.setError("Enter a valid email address");
             edtEmail.requestFocus();
-            return false;
+            return ;
         }
+        mAuth.createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
 
-        return true;
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        //Toast.makeText(getApplicationContext(), "in OnComplete",Toast.LENGTH_SHORT).show();
+
+                        if (task.isSuccessful()) {
+                            edtEmail.setText("success");
+                            Toast.makeText(getApplicationContext(), "auth success",Toast.LENGTH_SHORT).show();
+                            startActivity(intent);
+                        } else {
+                            Toast.makeText(getApplicationContext(), "auth failed",Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
     }
 }
