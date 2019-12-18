@@ -2,13 +2,22 @@ package com.example.jobbank;
 
 import android.content.Context;
 
+<<<<<<< HEAD
+import androidx.test.ext.junit.runners.AndroidJUnit4;
+import androidx.test.platform.app.InstrumentationRegistry;
+=======
 import androidx.test.platform.app.InstrumentationRegistry;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
+>>>>>>> ea335180174ccde307e38e78dfc50885ed418529
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+<<<<<<< HEAD
+import static org.junit.Assert.assertEquals;
+=======
 import static org.junit.Assert.*;
+>>>>>>> ea335180174ccde307e38e78dfc50885ed418529
 
 /**
  * Instrumented test, which will execute on an Android device.

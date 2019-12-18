@@ -2,7 +2,11 @@ package com.example.jobbank;
 
 import org.junit.Test;
 
+<<<<<<< HEAD
+import static org.junit.Assert.assertEquals;
+=======
 import static org.junit.Assert.*;
+>>>>>>> ea335180174ccde307e38e78dfc50885ed418529
 
 /**
  * Example local unit test, which will execute on the development machine (host).
