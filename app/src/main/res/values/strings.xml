@@ -15,6 +15,9 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+<<<<<<< HEAD
     <string name="title_activity_home1">Home1Activity</string>
     <string name="title_activity_sign_up">SignUpActivity</string>
+=======
+>>>>>>> ea335180174ccde307e38e78dfc50885ed418529
 </resources>
