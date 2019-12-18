@@ -6,9 +6,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
@@ -18,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     TextView tvSignUp;
     EditText edtEmail,edtPass;
     private FirebaseAuth mAuth;
-    private String email,pass;
+    private String email, password;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,9 +41,19 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 email = edtEmail.getText().toString();
-                pass = edtPass.getText().toString();
-                if(checkValid(email,pass)){
-                    startActivity(intent);
+                password = edtPass.getText().toString();
+                if(checkValid(email, password)){
+                    mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                startActivity(intent);
+                            } else {
+                                Toast.makeText(getApplicationContext(), "auth failed",Toast.LENGTH_SHORT).show();
+                            }
+
+                        }
+                    });
                 }
             }
         });
@@ -46,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
         tvSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 startActivity(intent);
             }
         });
