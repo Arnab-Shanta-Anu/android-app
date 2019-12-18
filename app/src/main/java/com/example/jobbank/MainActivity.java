@@ -43,7 +43,8 @@ public class MainActivity extends AppCompatActivity {
                 email = edtEmail.getText().toString();
                 password = edtPass.getText().toString();
                 if(checkValid(email, password)){
-                    mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    mAuth.createUserWithEmailAndPassword(email, password)
+                            .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
