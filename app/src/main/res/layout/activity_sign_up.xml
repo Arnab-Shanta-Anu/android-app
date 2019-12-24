@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
-    android:background="#673AB7"
+    android:background="#6B03A9F4"
     android:orientation="vertical">
 
     <TextView
@@ -52,6 +52,8 @@
     <Button
         android:id="@+id/btnLogIn"
         android:layout_width="168dp"
+
+        android:backgroundColor="#009688"
         android:layout_height="wrap_content"
         android:text="Login" />
 
@@ -62,9 +64,10 @@
 
         <TextView
             android:id="@+id/textView2"
+            android:textSize="18dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="dont have an account? " />
+            android:text="don't have an account? " />
 
         <TextView
             android:id="@+id/tvSignUp"

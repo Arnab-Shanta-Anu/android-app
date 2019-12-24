@@ -1,6 +1,5 @@
 package com.example.jobbank;
 
-<<<<<<< HEAD
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -25,24 +24,11 @@ public class MainActivity extends AppCompatActivity {
     EditText edtEmail,edtPass;
     private FirebaseAuth mAuth;
     private String email, password;
-=======
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.os.Bundle;
-import android.view.KeyEvent;
-import android.view.View;
-import android.widget.Button;
-
-public class MainActivity extends AppCompatActivity {
-
-    Button homeBtn,catagoryBtn,profileBtn,signInBtn;
->>>>>>> ea335180174ccde307e38e78dfc50885ed418529
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-<<<<<<< HEAD
         mAuth = FirebaseAuth.getInstance();
         intent = new Intent(this, HomeActivity.class);
 
@@ -67,41 +53,10 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 startActivity(intent);
-=======
-        homeBtn = findViewById(R.id.HomeId);
-        catagoryBtn = findViewById(R.id.CatagoryId);
-        profileBtn = findViewById(R.id.ProfileId);
-        signInBtn = findViewById(R.id.SignInId);
-
-        homeBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                setContentView(R.layout.activity_main);
-
-            }
-        });
-        catagoryBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                setContentView(R.layout.activity_catagory);
-            }
-        });
-        profileBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                setContentView(R.layout.activity_user_profile);
-            }
-        });
-        signInBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                setContentView(R.layout.activity_login_form);
->>>>>>> ea335180174ccde307e38e78dfc50885ed418529
             }
         });
     }
 
-<<<<<<< HEAD
     private void checkValid(String email, String password) {
         if(email.isEmpty()){
             edtEmail.setError("Enter an email address");
@@ -142,7 +97,4 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
     }
-=======
-
->>>>>>> ea335180174ccde307e38e78dfc50885ed418529
 }
