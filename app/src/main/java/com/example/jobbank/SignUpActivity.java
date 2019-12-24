@@ -41,9 +41,9 @@ public class SignUpActivity extends AppCompatActivity {
             btnLogin.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    email = edtEmail.getText().toString();
-                    password = edtPass.getText().toString();
-                    checkValid(email, password);
+                    //email = edtEmail.getText().toString();
+                    //password = edtPass.getText().toString();
+                    //checkValid(email, password);
 
 
                 }
@@ -53,35 +53,35 @@ public class SignUpActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
 
-                    startActivity(intent);
+                    //startActivity(intent);
                 }
             });
         }
 
         private void checkValid(String email, String password) {
             if(email.isEmpty()){
-                edtEmail.setError("Enter an email address");
-                edtEmail.requestFocus();
+                //edtEmail.setError("Enter an email address");
+                //edtEmail.requestFocus();
                 return ;
             }
             if(password.isEmpty()){
-                edtPass.setError("Enter an password address");
-                edtPass.requestFocus();
+                //edtPass.setError("Enter an password address");
+                //edtPass.requestFocus();
                 return ;
             }
             if(password.length()<6){
-                edtPass.setError("password needs to be at least 6 characters");
-                edtPass.requestFocus();
+                //edtPass.setError("password needs to be at least 6 characters");
+                //edtPass.requestFocus();
                 return ;
             }
 
             if(!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches())
             {
-                edtEmail.setError("Enter a valid email address");
-                edtEmail.requestFocus();
+                //edtEmail.setError("Enter a valid email address");
+                //edtEmail.requestFocus();
                 return ;
             }
-            mAuth.createUserWithEmailAndPassword(email, password)
+            /*mAuth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
 
                         @Override
@@ -97,7 +97,7 @@ public class SignUpActivity extends AppCompatActivity {
                             }
                         }
                     });
-
+*/
     }
 }
 
