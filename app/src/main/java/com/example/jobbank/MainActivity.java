@@ -19,44 +19,40 @@ import com.google.firebase.auth.FirebaseAuth;
 public class MainActivity extends AppCompatActivity {
 
     Intent intent;
-    Button btnLogin;
-    TextView tvSignUp;
     EditText edtEmail,edtPass;
     private FirebaseAuth mAuth;
     private String email, password;
+
+    //declare variable
+    Button mLoginBtn,mSignUpBtn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         mAuth = FirebaseAuth.getInstance();
-        intent = new Intent(this, HomeActivity.class);
+        intent = new Intent(this, UserProfileActivity.class);
 
-        btnLogin = findViewById(R.id.btnLogIn);
-        tvSignUp = findViewById(R.id.tvSignUp);
+       //finding btn
+        mLoginBtn = findViewById(R.id.loginBtn);
+        mSignUpBtn = findViewById(R.id.signUpBtn);
+
+
         edtEmail = findViewById(R.id.edtEmail);
         edtPass = findViewById(R.id.edtPass);
 
-        btnLogin.setOnClickListener(new View.OnClickListener() {
+
+
+        //handle signup btn click
+        mSignUpBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                email = edtEmail.getText().toString();
-                password = edtPass.getText().toString();
-                checkValid(email, password);
-
-
-            }
-        });
-
-        tvSignUp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                startActivity(intent);
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, SignUpActivity.class));
             }
         });
     }
-
+/*
     private void checkValid(String email, String password) {
         if(email.isEmpty()){
             edtEmail.setError("Enter an email address");
@@ -96,5 +92,8 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }
                 });
+
+
+ */
     }
-}
+
