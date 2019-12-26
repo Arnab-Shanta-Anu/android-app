@@ -1,24 +1,29 @@
 package com.example.jobbank;
 
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import androidx.appcompat.app.AppCompatActivity;
+public class UserProfileActivity extends AppCompatActivity {
 
-public class HomeActivity extends AppCompatActivity {
-
+    Button homeBtn,categoryBtn,profileBtn,signInBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_user_profile);
 
-        Button homeBtn,categoryBtn,profileBtn,signInBtn;
 
-            homeBtn = findViewById(R.id.HomeId);
-            categoryBtn = findViewById(R.id.CatagoryId);
-            profileBtn = findViewById(R.id.ProfileId);
-            signInBtn = findViewById(R.id.SignInId);
+        //Actionbar and it's title
+        ActionBar actionBar= getSupportActionBar();
+        actionBar.setTitle("User Profile");
+
+        homeBtn = findViewById(R.id.HomeId);
+        categoryBtn = findViewById(R.id.CatagoryId);
+        profileBtn = findViewById(R.id.ProfileId);
+        signInBtn = findViewById(R.id.SignInId);
 
         homeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,7 +50,5 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-
     }
-
 }

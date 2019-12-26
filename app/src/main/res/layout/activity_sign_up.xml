@@ -1,81 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_gravity="center"
-    android:background="#673AB7"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".SignUpActivity">
 
     <TextView
-        android:id="@+id/textView"
         android:layout_width="match_parent"
-        android:layout_height="109dp"
-        android:layout_gravity="center"
-        android:height="50dp"
-        android:gravity="center"
-        android:text="Log In or Sign Up"
-        android:textColor="#FF9800"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        android:typeface="serif" />
+        android:layout_height="250dp"
+        android:text="Sign Up"
+        android:textAlignment="center"
+        android:textColor="@color/colorBlack"
+        android:textSize="35sp" />
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="88dp" />
-
-    <EditText
-        android:id="@+id/edtEmail"
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="enter email"
-        android:inputType="textEmailAddress"
-        android:textSize="24sp" />
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:id="@+id/emailTIL">
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="20dp" />
-
-    <EditText
-        android:id="@+id/edtPass"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="enter password"
-        android:inputType="textPassword"
-        android:textSize="24sp" />
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="94dp" />
-
-    <Button
-        android:id="@+id/btnLogIn"
-        android:layout_width="168dp"
-        android:layout_height="wrap_content"
-        android:text="Login" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="dont have an account? " />
-
-        <TextView
-            android:id="@+id/tvSignUp"
+        <EditText
+            android:id="@+id/emailEdt"
+            android:inputType="textEmailAddress"
+            android:hint="Email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:clickable="true"
-            android:gravity="center"
-            android:text="sign up"
-            android:textColor="#F44336"
-            android:textSize="24sp" />
+            />
 
-    </LinearLayout>
+    </com.google.android.material.textfield.TextInputLayout>
 
-</LinearLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:id="@+id/passwordTIL"
+        android:layout_below="@+id/emailTIL"
+        app:passwordToggleEnabled="true">
+
+        <EditText
+            android:id="@+id/passwordEdt"
+            android:inputType="textPassword"
+            android:hint="Password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/registerBtn"
+        android:text="Register"
+        android:layout_centerHorizontal="true"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_below="@+id/passwordTIL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>

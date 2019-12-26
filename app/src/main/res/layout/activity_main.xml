@@ -1,60 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-<<<<<<< HEAD
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
-    android:background="#673AB7"
+    android:background="#08FF0000"
+    android:padding="20dp"
     android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="194dp"
+        android:src="@drawable/jobbank" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
-        android:layout_height="109dp"
-        android:layout_gravity="center"
-        android:height="50dp"
-        android:gravity="center"
-        android:inputType="textEmailAddress"
+        android:layout_height="88dp"
+        android:textAlignment="center"
         android:text="Log In or Sign Up"
         android:textColor="#FF9800"
         android:textSize="30sp"
         android:textStyle="bold"
         android:typeface="serif" />
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="88dp" />
-
-    <EditText
-        android:id="@+id/edtEmail"
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="enter email"
-        android:inputType="textEmailAddress"
-        android:textSize="24sp" />
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true">
+        <EditText
+            android:id="@+id/edtEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:textSize="24sp" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="20dp" />
-
-    <EditText
-        android:id="@+id/edtPass"
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="enter password"
-        android:inputType="textPassword"
-        android:textSize="24sp" />
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true">
+        <EditText
+            android:id="@+id/edtPass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:textSize="24sp" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="94dp" />
+        android:layout_height="30dp" />
 
     <Button
-        android:id="@+id/btnLogIn"
+        android:id="@+id/loginBtn"
         android:layout_width="168dp"
         android:layout_height="wrap_content"
+        style="@style/Widget.AppCompat.Button.Colored"
         android:text="Login" />
 
     <LinearLayout
@@ -63,174 +68,18 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="dont have an account? " />
+            android:text="don't have an account? " />
 
-        <TextView
-            android:id="@+id/tvSignUp"
+        <Button
+            android:id="@+id/signUpBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:clickable="true"
-            android:gravity="center"
+            style="@style/Widget.AppCompat.Button.Colored"
             android:text="sign up"
-            android:textColor="#F44336"
             android:textSize="24sp" />
 
     </LinearLayout>
-=======
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="10dp"
-    tools:context=".MainActivity">
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:src="@drawable/job_bank" />
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp">
-
-            <Button
-                android:id="@+id/HomeId"
-                android:layout_width="98dp"
-                android:layout_height="wrap_content"
-                android:background="#2196F3"
-                android:text="@string/HomeBtn" />
-
-            <Button
-                android:id="@+id/CatagoryId"
-                android:layout_width="106dp"
-                android:layout_height="wrap_content"
-                android:background="#2196F3"
-                android:text="@string/CatagoryBtn" />
-
-            <Button
-                android:id="@+id/ProfileId"
-                android:layout_width="101dp"
-                android:layout_height="wrap_content"
-                android:background="#2196F3"
-                android:text="@string/MyJobsBtn" />
-
-            <Button
-                android:id="@+id/SignInId"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:background="#2196F3"
-                android:text="@string/SignInBtn" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp">
-
-            <EditText
-                android:id="@+id/edit_searchId"
-                android:layout_width="282dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:hint="Search jobs" />
-
-            <Button
-                android:id="@+id/searchId"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:background="#36BB43"
-                android:text="@string/SearchBtn"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/job1Id"
-            android:layout_width="match_parent"
-            android:layout_height="36dp"
-            android:layout_marginBottom="10dp"
-            android:background="#D4DF62"
-            android:gravity="center_horizontal"
-            android:text="Job 1"
-            android:textStyle="normal" />
-
-        <TextView
-            android:id="@+id/job2Id"
-            android:layout_width="match_parent"
-            android:layout_height="36dp"
-            android:layout_marginBottom="10dp"
-            android:background="#D4DF62"
-            android:gravity="center_horizontal"
-            android:text="Job 2"
-            android:textStyle="normal" />
-
-        <TextView
-            android:id="@+id/job3Id"
-            android:layout_width="match_parent"
-            android:layout_height="36dp"
-            android:layout_marginBottom="10dp"
-            android:background="#D4DF62"
-            android:gravity="center_horizontal"
-            android:text="Job 3"
-            android:textStyle="normal" />
-
-        <TextView
-            android:id="@+id/job4Id"
-            android:layout_width="match_parent"
-            android:layout_height="36dp"
-            android:layout_marginBottom="10dp"
-            android:background="#D4DF62"
-            android:gravity="center_horizontal"
-            android:text="Job 4"
-            android:textStyle="normal" />
-
-        <TextView
-            android:id="@+id/job5Id"
-            android:layout_width="match_parent"
-            android:layout_height="36dp"
-            android:layout_marginBottom="10dp"
-            android:background="#D4DF62"
-            android:gravity="center_horizontal"
-            android:text="Job 5"
-            android:textStyle="normal" />
-
-        <TextView
-            android:id="@+id/job6Id"
-            android:layout_width="match_parent"
-            android:layout_height="36dp"
-            android:layout_marginBottom="10dp"
-            android:background="#D4DF62"
-            android:gravity="center_horizontal"
-            android:text="Job 6"
-            android:textStyle="normal" />
-
-        <TextView
-            android:id="@+id/job7Id"
-            android:layout_width="match_parent"
-            android:layout_height="36dp"
-            android:layout_marginBottom="80dp"
-            android:background="#D4DF62"
-            android:gravity="center_horizontal"
-            android:text="Job 7"
-            android:textStyle="normal"
-
-            />
-
-        <TextView
-            android:layout_width="401dp"
-            android:layout_height="83dp"
-            android:gravity="center"
-            android:text="@string/description"
-            android:textSize="15dp"
-            android:textStyle="italic" />
-
->>>>>>> ea335180174ccde307e38e78dfc50885ed418529
 
 </LinearLayout>
