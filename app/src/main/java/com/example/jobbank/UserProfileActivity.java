@@ -20,6 +20,9 @@ public class UserProfileActivity extends AppCompatActivity {
         ActionBar actionBar= getSupportActionBar();
         actionBar.setTitle("User Profile");
 
+
+
+
         homeBtn = findViewById(R.id.HomeId);
         categoryBtn = findViewById(R.id.CatagoryId);
         profileBtn = findViewById(R.id.ProfileId);

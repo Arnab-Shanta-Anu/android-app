@@ -18,10 +18,10 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
 
-    Intent intent;
-    EditText edtEmail,edtPass;
-    private FirebaseAuth mAuth;
-    private String email, password;
+    //Intent intent;
+    //EditText edtEmail,edtPass;
+   // private FirebaseAuth mAuth;
+    //private String email, password;
 
     //declare variable
     Button mLoginBtn,mSignUpBtn;
@@ -31,16 +31,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mAuth = FirebaseAuth.getInstance();
-        intent = new Intent(this, UserProfileActivity.class);
+        //mAuth = FirebaseAuth.getInstance();
+        //intent = new Intent(this, UserProfileActivity.class);
 
        //finding btn
         mLoginBtn = findViewById(R.id.loginBtn);
         mSignUpBtn = findViewById(R.id.signUpBtn);
 
 
-        edtEmail = findViewById(R.id.edtEmail);
-        edtPass = findViewById(R.id.edtPass);
+        //edtEmail = findViewById(R.id.edtEmail);
+        //edtPass = findViewById(R.id.edtPass);
 
 
 
