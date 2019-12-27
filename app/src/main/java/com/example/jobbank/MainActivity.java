@@ -11,10 +11,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -39,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
        //finding btn
         mLoginBtn = findViewById(R.id.loginBtn);
         mSignUpBtn = findViewById(R.id.signUpBtn);
-
 
         edtEmail = findViewById(R.id.edtEmail);
         edtPass = findViewById(R.id.edtPass);
