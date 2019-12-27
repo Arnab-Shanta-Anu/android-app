@@ -23,10 +23,9 @@ public class UserProfileActivity extends AppCompatActivity {
 
 
 
-        homeBtn = findViewById(R.id.HomeId);
-        categoryBtn = findViewById(R.id.CatagoryId);
-        profileBtn = findViewById(R.id.ProfileId);
-        signInBtn = findViewById(R.id.SignInId);
+        homeBtn = findViewById(R.id.homeId);
+        categoryBtn = findViewById(R.id.catagoryId);
+        profileBtn = findViewById(R.id.profileId);
 
         homeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,12 +40,6 @@ public class UserProfileActivity extends AppCompatActivity {
             }
         });
         profileBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-        signInBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
