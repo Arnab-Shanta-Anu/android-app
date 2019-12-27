@@ -15,6 +15,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -101,11 +102,10 @@ public class MainActivity extends AppCompatActivity {
                         //Toast.makeText(getApplicationContext(), "in OnComplete",Toast.LENGTH_SHORT).show();
                         progressDialog.dismiss();
                         if (task.isSuccessful()) {
-                            edtEmail.setText("success");
-                            Toast.makeText(getApplicationContext(), "auth success",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "authentication success",Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(MainActivity.this, UserProfileActivity.class));
                         } else {
-                            Toast.makeText(getApplicationContext(), "auth failed",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "authentication failed",Toast.LENGTH_SHORT).show();
                         }
                     }
                 });

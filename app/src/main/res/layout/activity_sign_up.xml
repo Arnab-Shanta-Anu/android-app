@@ -11,7 +11,10 @@
         android:layout_width="match_parent"
         android:layout_height="250dp"
         android:text="Sign Up"
+        android:background="#EB9312"
+        android:gravity="center"
         android:textAlignment="center"
+        android:textStyle="bold"
         android:textColor="@color/colorBlack"
         android:textSize="35sp" />
 
@@ -20,6 +23,24 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
+        android:id="@+id/usernameTIL">
+
+        <EditText
+            android:id="@+id/usernameEdt"
+            android:inputType="text"
+            android:hint="Username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_below="@+id/usernameTIL"
         android:id="@+id/emailTIL">
 
         <EditText
@@ -51,12 +72,47 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:id="@+id/genderTIL"
+        android:layout_below="@+id/passwordTIL"
+        app:passwordToggleEnabled="true">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/genderId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gender"/>
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <RadioButton
+                android:id="@+id/maleId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Male"/>
+            <RadioButton
+                android:id="@+id/femaleId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Female"/>
+        </RadioGroup>
+
+        </LinearLayout>
+    </com.google.android.material.textfield.TextInputLayout>
+
     <Button
         android:id="@+id/registerBtn"
         android:text="Register"
         android:layout_centerHorizontal="true"
         style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_below="@+id/passwordTIL"
+        android:layout_below="@+id/genderTIL"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
