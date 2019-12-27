@@ -46,7 +46,6 @@ public class MainActivity extends AppCompatActivity {
         mLoginBtn = findViewById(R.id.loginBtn);
         mSignUpBtn = findViewById(R.id.signUpBtn);
 
-
         edtEmail = findViewById(R.id.edtEmail);
         edtPass = findViewById(R.id.edtPass);
 
