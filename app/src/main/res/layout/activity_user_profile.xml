@@ -39,7 +39,7 @@
         android:layout_marginBottom="20dp">
 
         <EditText
-            android:id="@+id/edit_searchId"
+            android:id="@+id/edtSearch"
             android:layout_width="282dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -53,21 +53,39 @@
             android:text="@string/SearchBtn"
             android:textSize="20sp"
             android:textStyle="bold" />
-
     </LinearLayout>
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:layout_height="wrap_content">
 
+                <EditText
+                    android:id="@+id/postId"
+                    android:hint="enter your post here"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <Button
+                    android:id="@+id/postBtnId"
+                    android:text="Post"
+                    android:onClick="methodInsert"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
 
+            <Button
+                android:id="@+id/displayId"
+                android:text="Display"
+                android:onClick="methodDisplay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/textPostId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
         </LinearLayout>
-
     </ScrollView>
 
 </LinearLayout>
