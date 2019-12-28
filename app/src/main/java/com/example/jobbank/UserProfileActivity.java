@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -21,6 +22,7 @@ public class UserProfileActivity extends AppCompatActivity {
     DatabaseReference myRef; //myRef variable globally declared
     Button homeBtn,categoryBtn,profileBtn,signInBtn;
     EditText postText;
+    TextView tv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,12 +40,14 @@ public class UserProfileActivity extends AppCompatActivity {
         categoryBtn = findViewById(R.id.catagoryId);
         profileBtn = findViewById(R.id.profileId);
         postText = findViewById(R.id.postId);
+        tv = findViewById(R.id.textPostId);
 
     }
     //Insert Data to Firebase
     public void methodInsert(View view) {
         String data = postText.getText().toString();
         myRef.setValue(data);
+        tv.setText(data);
     }
 
     //Retrive date from Firebase
@@ -58,7 +62,6 @@ public class UserProfileActivity extends AppCompatActivity {
                 String value = dataSnapshot.getValue(String.class);
                 //Log.d(TAG, "Value is: " + value);
                 Toast.makeText(UserProfileActivity.this,value,Toast.LENGTH_LONG).show();
-
             }
 
             @Override
