@@ -1,19 +1,19 @@
 package com.example.jobbank;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -21,16 +21,19 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
-import java.util.Date;
+import java.util.HashMap;
 
 public class SignUpActivity extends AppCompatActivity {
 
-    DatePickerDialog datePickerDialog;
-    EditText mEmailEdt, mPasswordEdt;
+    EditText mEmailEdt, mPasswordEdt,mUserNameEdt;
     Button mRegisterBtn;
     //progressbar to display while registering user
     ProgressDialog progressDialog;
+    RadioGroup radioGroup;
+    String gender;
 
     //Declare an instance of FirebaseAuth
     private FirebaseAuth mAuth;
@@ -47,6 +50,9 @@ public class SignUpActivity extends AppCompatActivity {
         actionBar.setDisplayShowHomeEnabled(true);
 
         //init
+
+        radioGroup = findViewById(R.id.genderRadio);
+        mUserNameEdt = findViewById(R.id.usernameEdt);
         mEmailEdt = findViewById(R.id.emailEdt);
         mPasswordEdt = findViewById(R.id.passwordEdt);
         mRegisterBtn = findViewById(R.id.registerBtn);
@@ -57,7 +63,16 @@ public class SignUpActivity extends AppCompatActivity {
         progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Registering User...");
 
+        radioGroup.clearCheck();
+
         //handle register btn click
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                RadioButton radioButton = group.findViewById(checkedId);
+                gender = radioButton.getText().toString();
+            }
+        });
 
         mRegisterBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,7 +80,6 @@ public class SignUpActivity extends AppCompatActivity {
                 //input email, password
                 String email = mEmailEdt.getText().toString().trim();
                 String password = mPasswordEdt.getText().toString().trim();
-
 
                 //validate email and password
                 if(!Patterns.EMAIL_ADDRESS.matcher(email).matches())
@@ -88,9 +102,10 @@ public class SignUpActivity extends AppCompatActivity {
 
             }
         });
+
     }
 
-    private void registerUser(String email, String password) {
+    private void registerUser(final String email, final String password) {
         //email and password pattern is valid
         //show progress dialog and start user registration
 
@@ -104,6 +119,27 @@ public class SignUpActivity extends AppCompatActivity {
                             // Sign in success, dismiss dialog and start register activity
                             progressDialog.dismiss();
                             FirebaseUser user = mAuth.getCurrentUser();
+
+                            String email = user.getEmail();
+                            String uid = user.getUid();
+                            String username = mUserNameEdt.getText().toString().trim();
+                            int selectedId = radioGroup.getCheckedRadioButtonId();
+                            RadioButton radioSexButton = findViewById(selectedId);
+                            String gender = radioSexButton.getText().toString();
+
+                            //store the registered user info into firebase using Hashmap
+                            HashMap<Object, String> hashMap = new HashMap<>();
+
+                            hashMap.put("email",email);
+                            hashMap.put("uid",uid);
+                            hashMap.put("username", username);
+                            hashMap.put("gender", gender);
+
+                            FirebaseDatabase database = FirebaseDatabase.getInstance();
+                            DatabaseReference reference = database.getReference();
+
+                            reference.child(uid).setValue(hashMap);
+
                             Toast.makeText(SignUpActivity.this, "Registered...\n"+user.getEmail(), Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(SignUpActivity.this,UserProfileActivity.class));
                             finish();
@@ -117,7 +153,7 @@ public class SignUpActivity extends AppCompatActivity {
                 }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                //error, dismiss progess error, get and show the error message
+                //error, dismiss progress error, get and show the error message
                 progressDialog.dismiss();
                 Toast.makeText(SignUpActivity.this,""+e.getMessage(), Toast.LENGTH_SHORT).show();
             }
