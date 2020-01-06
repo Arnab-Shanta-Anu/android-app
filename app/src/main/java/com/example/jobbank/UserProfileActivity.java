@@ -19,6 +19,8 @@ import com.google.firebase.database.ValueEventListener;
 
 public class UserProfileActivity extends AppCompatActivity {
 
+    DatabaseHandler databaseHandler;
+
     DatabaseReference myRef; //myRef variable globally declared
     Button homeBtn,categoryBtn,profileBtn,signInBtn;
     EditText postText;
@@ -27,7 +29,7 @@ public class UserProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
-
+        databaseHandler = new DatabaseHandler(this);
 
         //firebase Initialization
         FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -48,6 +50,16 @@ public class UserProfileActivity extends AppCompatActivity {
         String data = postText.getText().toString();
         myRef.setValue(data);
         tv.setText(data);
+
+        //to insert data into database
+        databaseHandler.insertData(postText.getText().toString());
+      /*  if(isInserted==true)
+            Toast.makeText(UserProfileActivity.this,"posted successfully..",Toast.LENGTH_LONG).show();
+        else
+            Toast.makeText(UserProfileActivity.this,"posting failed..",Toast.LENGTH_LONG).show();
+            */
+
+
     }
 
     //Retrive date from Firebase
@@ -57,17 +69,12 @@ public class UserProfileActivity extends AppCompatActivity {
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                // This method is called once with the initial value and again
-                // whenever data at this location is updated.
                 String value = dataSnapshot.getValue(String.class);
-                //Log.d(TAG, "Value is: " + value);
                 Toast.makeText(UserProfileActivity.this,value,Toast.LENGTH_LONG).show();
             }
 
             @Override
             public void onCancelled(DatabaseError error) {
-                // Failed to read value
-               // Log.w(TAG, "Failed to read value.", error.toException());
                 Toast.makeText(UserProfileActivity.this,"Failed!!",Toast.LENGTH_LONG).show();
             }
         });
