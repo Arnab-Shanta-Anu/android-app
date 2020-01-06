@@ -1,6 +1,6 @@
 {
   "project_info": {
-    "project_number": "502823045836",
+    "project_number": "1017087719126",
     "firebase_url": "https://job-bank-31cf5.firebaseio.com",
     "project_id": "job-bank-31cf5",
     "storage_bucket": "job-bank-31cf5.appspot.com"
@@ -8,22 +8,14 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:502823045836:android:1c8a82447a5910a2a5d069",
+        "mobilesdk_app_id": "1:1017087719126:android:ab8260e72ce0e749acfb77",
         "android_client_info": {
           "package_name": "com.example.jobbank"
         }
       },
       "oauth_client": [
         {
-          "client_id": "502823045836-ddtvlse7iq5esk5g8fago8ljal3uu3mk.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.jobbank",
-            "certificate_hash": "2428f7aff923ae63b1a7eb0261bf354449e33a63"
-          }
-        },
-        {
-          "client_id": "502823045836-5vgqg8safod9bh831uh47qc8utlvn3cp.apps.googleusercontent.com",
+          "client_id": "1017087719126-6n7b0k119n097eit6hqra8849jk5c9u1.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
@@ -36,7 +28,7 @@
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "502823045836-5vgqg8safod9bh831uh47qc8utlvn3cp.apps.googleusercontent.com",
+              "client_id": "1017087719126-6n7b0k119n097eit6hqra8849jk5c9u1.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

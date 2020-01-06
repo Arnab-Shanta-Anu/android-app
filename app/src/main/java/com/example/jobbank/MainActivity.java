@@ -20,13 +20,14 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
 
+    DatabaseHandler myDB;
     EditText edtEmail,edtPass;
     private FirebaseAuth mAuth;
     private String email, password;
     ProgressDialog progressDialog;
     private DatabaseReference mDatabase;
 
-
+    DatabaseHandler databaseHandler;
     //declare variable
     Button mLoginBtn,mSignUpBtn;
 
@@ -35,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        myDB = new DatabaseHandler(this);
+       // databaseHandler = new DatabaseHandler(this);
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
         mAuth = FirebaseAuth.getInstance();
