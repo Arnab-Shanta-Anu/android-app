@@ -1,8 +1,10 @@
 package com.example.jobbank;
 
 import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -43,6 +45,7 @@ public class UserProfileActivity extends AppCompatActivity {
         profileBtn = findViewById(R.id.profileId);
         postText = findViewById(R.id.postId);
         tv = findViewById(R.id.textPostId);
+       // methodDisplay();
 
     }
     //Insert Data to Firebase
@@ -70,7 +73,25 @@ public class UserProfileActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String value = dataSnapshot.getValue(String.class);
-                Toast.makeText(UserProfileActivity.this,value,Toast.LENGTH_LONG).show();
+
+                //showing all data from table
+                Cursor result= databaseHandler.getAllData();
+                if(result.getCount()==0)
+                {
+                    //when data ==0
+                    showMessage("Error..","no data found");
+                    return;
+                }
+                StringBuffer buffer = new StringBuffer();
+                while (result.moveToNext())
+                {
+                    buffer.append("post no:  "+result.getString(0)+"\n");
+                    buffer.append("Details : "+result.getString(1)+"\n\n");
+                }
+                //show all data
+               showMessage("Data", buffer.toString());
+
+                //Toast.makeText(UserProfileActivity.this,value,Toast.LENGTH_LONG).show();
             }
 
             @Override
@@ -79,4 +100,13 @@ public class UserProfileActivity extends AppCompatActivity {
             }
         });
     }
+    public void showMessage(String title, String message)
+    {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setCancelable(true);
+        builder.setTitle(title);
+        builder.setMessage(message);
+        builder.show();
+    }
+
 }

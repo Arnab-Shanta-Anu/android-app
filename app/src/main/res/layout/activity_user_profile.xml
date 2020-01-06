@@ -35,7 +35,7 @@
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="54dp"
         android:layout_marginBottom="20dp">
 
         <EditText
@@ -47,10 +47,9 @@
 
         <Button
             android:id="@+id/searchId"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:background="#36BB43"
-            android:text="@string/SearchBtn"
+            android:layout_width="68dp"
+            android:layout_height="match_parent"
+            android:drawableLeft="@drawable/search_icon"
             android:textSize="20sp"
             android:textStyle="bold" />
     </LinearLayout>
